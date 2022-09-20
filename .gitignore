@@ -1,0 +1,5 @@
+node_modules/
+.env
+sqlCommands.txt
+temp.js
+**/*.css.map

@@ -1,0 +1,34 @@
+.footer-container {
+  display: none;
+  color: #91d451;
+  background-color: #094754;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  .footer-container {
+    display: flex;
+  }
+}
+
+.footer-container > div {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.footer-container > div:hover {
+  background-color: aliceblue;
+}
+
+.footer-container > div > a {
+  color: #91d451;
+  text-decoration: none;
+}
+.footer-container > div:hover > a {
+  color: #094754;
+}

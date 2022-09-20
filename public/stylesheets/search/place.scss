@@ -1,0 +1,143 @@
+$green1: #c4fb79;
+$green2: #91d451;
+$green3: #02b25f;
+$green4: #278577;
+$green5: #094754;
+$green6: #052e5c;
+body > form {
+  width: 80%;
+  margin: 1em auto;
+  padding: 1em;
+  border: 5px solid #9bc3c3;
+  background-color: #094754;
+  color: #9bc3c3;
+  border-radius: 1em;
+}
+body > form > * {
+  margin: 1em 0.2em;
+}
+body > form > p {
+  text-align: center;
+  font-size: 2em;
+}
+body > form > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+body > form > button {
+  font-size: 1.2em;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5em 1em;
+  background-color: #094754;
+  color: #9bc3c3;
+  border-color: #9bc3c3;
+}
+
+body > form > button:hover {
+  color: #91d451;
+  border-color: #91d451;
+}
+
+body > form > button:hover::after {
+  border-color: #91d451;
+}
+body > form > button:after {
+  border-color: #9bc3c3;
+}
+
+body > form > button:active {
+  transform: translateX(-50%) scale(1.1);
+}
+.place-container {
+  border-radius: 1em;
+  width: 75%;
+  margin: 1em auto;
+  padding: 1em;
+  background-color: $green2;
+  display: grid;
+  grid-template:
+    "a b b b" auto
+    "a b b b" auto
+    "a c c c" auto / 1.2fr 1fr 1fr 1fr;
+  @media screen and (max-width: 900px) {
+    grid-template:
+      "a" auto
+      "b" auto
+      "c" auto/100%;
+    > * {
+      margin: 0.5em 0;
+    }
+  }
+  figure {
+    @media screen and (max-width: 900px) {
+      align-self: center;
+      justify-self: center;
+    }
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+    }
+  }
+  .info {
+    grid-area: b;
+    color: $green5;
+    font-size: 1.5em;
+  }
+  .actions {
+    grid-area: c;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    @media screen and (max-width: 900px) {
+      justify-content: center;
+      width: 100%;
+      form {
+        margin: 0;
+      }
+    }
+
+    > * {
+      margin: 0 1em;
+    }
+    button {
+      height: 30px;
+      font-size: 1.1em;
+      padding: 0.3em 0.6em;
+      @media screen and (max-width: 900px) {
+        width: fit-content;
+        margin: 0 1em;
+        font-size: 0.8em;
+        padding: 0.1em 0.5em;
+      }
+    }
+    .view-more-button {
+      background-color: rgb(103, 148, 214);
+      border: 1px solid rgb(103, 148, 214);
+      &::after {
+        border: 2px solid rgb(103, 148, 214);
+      }
+    }
+    .edit-button {
+      background-color: rgb(214, 203, 103);
+      border: 1px solid rgb(214, 203, 103);
+      &::after {
+        border: 2px solid rgb(214, 203, 103);
+      }
+    }
+    .delete-button {
+      background-color: rgb(207, 118, 83);
+      border: 1px solid rgb(207, 118, 83);
+      &::after {
+        border: 2px solid rgb(207, 118, 83);
+      }
+    }
+  }
+}

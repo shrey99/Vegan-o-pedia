@@ -1,0 +1,67 @@
+.chat-container {
+  margin: auto;
+  width: 80%;
+  display: grid;
+  grid-template: "a a a" auto "b c c" 70vh/1fr 1fr 1fr;
+}
+.chat-container > * {
+  border: 1px solid #91d451;
+}
+.chat-container h1 {
+  grid-area: a;
+  text-align: center;
+}
+.chat-container .user-list {
+  grid-area: b;
+}
+.chat-container .user-list .users {
+  text-align: center;
+  padding: 1em;
+  background-color: beige;
+  cursor: pointer;
+}
+.chat-container .user-list .users:hover {
+  background-color: #f3f393;
+}
+.chat-container .chat-box {
+  grid-area: c;
+  display: flex;
+  flex-direction: column;
+}
+.chat-container .chat-box .messages-container {
+  padding: 1em 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.chat-container .chat-box .messages-container span {
+  text-align: right;
+  padding: 0.3em;
+  margin: 0.2em 0.2em;
+  border: 1px solid #094754;
+  border-radius: 1em;
+}
+.chat-container .chat-box .input-bar {
+  align-items: center;
+  height: 3em;
+  border-top: 1px solid #91d451;
+  display: flex;
+}
+.chat-container .chat-box .input-bar svg {
+  height: 50%;
+  cursor: pointer;
+  margin-left: 1em;
+  margin-right: 0.4em;
+}
+.chat-container .chat-box .input-bar svg:hover {
+  fill: #278577;
+}
+.chat-container .chat-box .input-bar input {
+  flex-grow: 1;
+  margin-left: 0.4em;
+}
+.chat-container .chat-box #current-user {
+  border-bottom: 1px solid #91d451;
+}
+
+/*# sourceMappingURL=chat.css.map */

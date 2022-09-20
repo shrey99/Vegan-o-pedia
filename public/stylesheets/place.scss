@@ -1,0 +1,146 @@
+$green1: #c4fb79;
+$green2: #91d451;
+$green3: #02b25f;
+$green4: #278577;
+$green5: #094754;
+$green6: #052e5c;
+#place-details {
+  border-radius: 2em;
+  border-color: $green5;
+  color: $green5;
+  width: 80%;
+  margin: auto;
+  margin-top: 6em;
+  padding: 1em;
+  border: 2px solid;
+  > * {
+    margin: 1em 2em;
+  }
+  h1,
+  h4 {
+    text-align: center;
+    font-size: 1.7em;
+  }
+  .column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: 950px) {
+      grid-template-columns: 1fr;
+    }
+    figure {
+      grid-column: 2;
+      img {
+        max-width: 100%;
+      }
+      @media screen and (max-width: 950px) {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: center;
+        img {
+          margin: auto;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      grid-row: 1/1;
+    }
+    #address-container {
+      font-size: 1.5em;
+      grid-column: 1;
+      grid-row: 1/1;
+      @media screen and (max-width: 950px) {
+        grid-column: 1;
+        grid-row: 2;
+        div {
+          span {
+            justify-self: center;
+          }
+        }
+      }
+      div {
+        width: 80%;
+        margin: 1em auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+#food-item-list {
+  font-size: 1.5em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: 950px) {
+    margin: 1em 0;
+  }
+  > * {
+    justify-self: center;
+  }
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-container {
+  margin: 1em auto;
+  border: 3.5px solid $green5;
+  width: 70%;
+  > * {
+    margin: 0.5em 0.4em;
+  }
+  .edit-button {
+    background-color: rgb(214, 203, 103);
+    border: 1px solid rgb(214, 203, 103);
+    &::after {
+      border: 1px solid rgb(214, 203, 103);
+    }
+  }
+}
+
+.sub-comment-container {
+  border-top: 3px solid $green5;
+  display: flex;
+  justify-content: space-around;
+  p {
+    margin-right: 1em;
+    &:nth-of-type(1) {
+      flex-grow: 1;
+      margin-left: 1em;
+      margin-right: 0;
+    }
+  }
+}
+
+h3 {
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.comment-form {
+  width: 70%;
+  margin: 1em auto;
+  border: 3.5px solid $green5;
+  padding: 0.5em;
+  div {
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    margin: 1em 0;
+    .add-comment {
+      padding: 0.3em 1em;
+      background-color: rgb(166, 214, 103);
+      border: 1px solid rgb(166, 214, 103);
+      &::after {
+        border: 1px solid rgb(166, 214, 103);
+      }
+    }
+  }
+}
+#user-comment {
+  order: -1;
+}

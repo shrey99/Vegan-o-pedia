@@ -1,0 +1,196 @@
+$green1: #c4fb79;
+$green2: #91d451;
+$green3: #02b25f;
+$green4: #278577;
+$green5: #094754;
+$green6: #052e5c;
+
+.toggle-container {
+  display: flex;
+  height: fit-content;
+  width: 100%;
+  justify-content: center;
+}
+.user-container {
+  height: fit-content;
+  overflow-y: clip;
+  position: relative;
+  margin: auto;
+  width: 80%;
+  overflow-x: hidden;
+  .places-container,
+  .recipies-container {
+    height: fit-content;
+    transition: transform 0.5s ease;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    h1 {
+      height: 30vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      div {
+        margin-left: 1em;
+        span:nth-of-type(2) {
+          margin: 1em;
+        }
+      }
+    }
+  }
+  .places-container {
+    position: relative;
+    h1 {
+      background-image: url("../images/restuarant.jpg");
+      background-position: center;
+      color: aliceblue;
+      background-color: $green5;
+      background-blend-mode: multiply;
+    }
+  }
+  .recipies-container {
+    transform: translateX(100%);
+    h1 {
+      background-image: url("../images/pizza.jpg");
+      background-position: center;
+      background-size: cover;
+      color: aliceblue;
+      background-color: $green5;
+      background-blend-mode: multiply;
+    }
+  }
+}
+
+#restaurants-button,
+#reciepies-button {
+  cursor: pointer;
+  margin: 0.5em;
+  padding: 0.5em;
+  font-size: 2em;
+  border-radius: 10px;
+  &:hover {
+    background-color: $green2;
+  }
+}
+
+.horizontal-line {
+  width: 1px;
+  min-height: 100px;
+  height: 100%;
+  background-image: linear-gradient(to bottom, white, black, white);
+}
+.active {
+  background-color: $green2;
+}
+.add-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  button {
+    cursor: pointer;
+    margin-top: 0.5em;
+    padding: 0.2em 2em;
+    font-size: 2em;
+    border: 3px solid blue;
+    border-color: $green5;
+    background-color: $green5;
+    color: $green2;
+    &:after {
+      border: 3px solid blue;
+      border-color: $green2;
+    }
+  }
+}
+
+.place-container,
+.reciepie-container {
+  border-radius: 1em;
+  width: 75%;
+  margin: 1em auto;
+  padding: 1em;
+  background-color: $green2;
+  display: grid;
+  grid-template:
+    "a b b b" auto
+    "a b b b" auto
+    "a c c c" auto / 1.2fr 1fr 1fr 1fr;
+  @media screen and (max-width: 900px) {
+    grid-template:
+      "a" auto
+      "b" auto
+      "c" auto/100%;
+    > * {
+      margin: 0.5em 0;
+    }
+  }
+  figure {
+    @media screen and (max-width: 900px) {
+      align-self: center;
+      justify-self: center;
+    }
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+    }
+  }
+  .info {
+    grid-area: b;
+    color: $green5;
+    font-size: 1.5em;
+  }
+  .actions {
+    grid-area: c;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    @media screen and (max-width: 900px) {
+      justify-content: center;
+      width: 100%;
+      form {
+        margin: 0;
+      }
+    }
+
+    > * {
+      margin: 0 1em;
+    }
+    button {
+      height: 30px;
+      font-size: 1.1em;
+      padding: 0.3em 0.6em;
+      @media screen and (max-width: 900px) {
+        width: fit-content;
+        margin: 0 1em;
+        font-size: 0.8em;
+        padding: 0.1em 0.5em;
+      }
+    }
+    .view-more-button {
+      background-color: rgb(103, 148, 214);
+      border: 1px solid rgb(103, 148, 214);
+      &::after {
+        border: 2px solid rgb(103, 148, 214);
+      }
+    }
+    .edit-button {
+      background-color: rgb(214, 203, 103);
+      border: 1px solid rgb(214, 203, 103);
+      &::after {
+        border: 2px solid rgb(214, 203, 103);
+      }
+    }
+    .delete-button {
+      background-color: rgb(207, 118, 83);
+      border: 1px solid rgb(207, 118, 83);
+      &::after {
+        border: 2px solid rgb(207, 118, 83);
+      }
+    }
+  }
+}

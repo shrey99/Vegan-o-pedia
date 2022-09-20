@@ -1,0 +1,92 @@
+.form-container {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container form {
+  color: #9bc3c3;
+  background-color: #094754;
+  padding: 1em 1em;
+  border: 5px solid #9bc3c3;
+  border-radius: 2em;
+}
+.form-container form h1 {
+  text-align: center;
+}
+.form-container form > div {
+  margin: 1em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.form-container form > button {
+  font-size: 1.2em;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.2em 0.5em;
+}
+.form-container form button {
+  background-color: #094754;
+  color: #9bc3c3;
+  border-color: #9bc3c3;
+}
+.form-container form button:hover {
+  color: #91d451;
+  border-color: #91d451;
+}
+.form-container form button:hover::after {
+  border-color: #91d451;
+}
+.form-container form button:after {
+  border-color: #9bc3c3;
+}
+
+#food-container > div:nth-of-type(1),
+#reciepie-container > div:nth-of-type(1) {
+  display: grid;
+  grid-template-columns: 3fr 1fr 0.5fr;
+}
+#food-container > div:nth-of-type(1) > *,
+#reciepie-container > div:nth-of-type(1) > * {
+  margin: 0 0.5em;
+}
+#food-container > div:nth-of-type(1) #food-options,
+#reciepie-container > div:nth-of-type(1) #food-options {
+  align-self: center;
+}
+@media screen and (max-width: 550px) {
+  #food-container > div:nth-of-type(1) #food-options,
+#reciepie-container > div:nth-of-type(1) #food-options {
+    height: 50%;
+  }
+}
+#food-container > div:nth-of-type(1) #food-options-button,
+#reciepie-container > div:nth-of-type(1) #food-options-button {
+  align-self: center;
+}
+@media screen and (max-width: 550px) {
+  #food-container > div:nth-of-type(1) #food-options-button,
+#reciepie-container > div:nth-of-type(1) #food-options-button {
+    height: 50%;
+  }
+}
+
+#food-container > div:nth-of-type(n + 2),
+#reciepie-container > div:nth-of-type(n + 2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#food-container > div:nth-of-type(n + 2) > *,
+#reciepie-container > div:nth-of-type(n + 2) > * {
+  margin: 0 0.5em;
+  margin-top: 0.5em;
+}
+
+#food-container,
+#reciepie-container {
+  display: block;
+}
+
+/*# sourceMappingURL=place.css.map */

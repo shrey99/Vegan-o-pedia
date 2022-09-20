@@ -1,0 +1,22 @@
+head
+    title veganopedia: #{name}
+    link(rel="stylesheet", href="/stylesheets/chat.css")
+include ./partials/header.pug
+body
+    .chat-container
+        h1 Chat
+        .user-list
+            .users user-1 
+            .users user-2
+            .users user-3
+        .chat-box
+            #current-user user-1
+            .messages-container
+                .message
+                    span This is a message
+            .input-bar
+                input#message(type="text", name="message")
+                include ./send.svg
+    script(src="/javascripts/chat.js") 
+
+include ./partials/footer.pug

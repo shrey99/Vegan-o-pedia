@@ -1,0 +1,177 @@
+.navbar {
+  color: #91d451;
+  z-index: 10;
+  height: 5vh;
+  background-color: #094754;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.2em;
+}
+.navbar h3 {
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+}
+.navbar h3 span {
+  flex-grow: 1;
+  text-align: center;
+}
+.navbar button {
+  font-size: 1em;
+  cursor: pointer;
+}
+.navbar .right-items {
+  display: flex;
+  align-items: center;
+}
+.navbar .right-items > * {
+  margin: 0 1em;
+}
+.navbar .right-items a {
+  margin: 0 0.5em;
+  transition: background-color 0.5s ease;
+  border-radius: 5px;
+  padding: 0.2em 0.6em;
+  color: #91d451;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.navbar .right-items a span {
+  margin-left: 5px;
+}
+.navbar .right-items a:active {
+  background-color: black;
+}
+.navbar .right-items a:hover {
+  color: #094754;
+  background-color: aliceblue;
+}
+.navbar .right-items a:nth-of-type(1) {
+  margin-left: 5px;
+}
+@media screen and (max-width: 650px) {
+  .navbar .right-items a:nth-of-type(n + 2) {
+    display: none;
+  }
+}
+
+#login-button,
+#logout-button {
+  padding: 0.1em 0.4em;
+  margin-right: 1em;
+}
+
+#login-forms {
+  margin-right: 2em;
+  position: absolute;
+  top: 130%;
+  right: 0;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#login-form,
+#register-form {
+  color: white;
+  background-color: #094754;
+  display: inline-block;
+  padding: 1rem;
+  border: 5px solid #052e5c;
+  border-radius: 10px;
+}
+#login-form > div,
+#register-form > div {
+  margin: 1em 0.5em;
+}
+#login-form > div button,
+#register-form > div button {
+  color: #91d451;
+  background-color: #094754;
+  padding: 0 0.4em;
+  border: 1px solid #91d451;
+}
+#login-form > div button::after,
+#register-form > div button::after {
+  border: 1px solid #91d451;
+}
+#login-form > div label,
+#register-form > div label {
+  font-size: 1.1em;
+}
+
+#login-form {
+  margin-bottom: 1em;
+}
+
+#register-button {
+  color: #c4fb79;
+  margin-left: 0.3em;
+}
+
+#broccoli-svg {
+  height: 28px;
+}
+
+.close-svg {
+  cursor: pointer;
+  height: 100%;
+  width: 17px;
+}
+.close-svg:hover {
+  transform: scale(1.1);
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease;
+}
+
+.errorMessages {
+  margin: auto;
+  width: 80%;
+  background-color: #c68787;
+  border: 2px solid #d32e2e;
+  display: flex;
+  justify-content: center;
+  padding: 0.3em 0.5em;
+}
+
+.successMessages {
+  margin: auto;
+  width: 80%;
+  background-color: #7dcf8b;
+  border: 2px solid #38d452;
+  display: flex;
+  justify-content: center;
+  padding: 0.3em 0.5em;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

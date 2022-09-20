@@ -1,0 +1,32 @@
+head
+    title veganopedia: #{name}
+    link(rel="stylesheet", href="/stylesheets/forms/place.css")
+include ../partials/header.pug
+body
+    .form-container
+        form(action="/forms/reciepie" method="POST" onsubmit="return formSubmitHandler(event)")
+            h1 Add Recipe 
+            div
+                label(for="reciepies_name") Name of Reciepie
+                input(type="text" placeholder="Reciepie name" name="reciepies_name" required)
+            div
+                label(for="Rating") Rating:
+                select(name="rating" required)
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+            div
+                label(for="photos") Reciepie photo url:
+                input(type="text" placeholder="Photos" name="photos")
+            #reciepie-container
+                div
+                    label(for="instructions")  Number of Food items to add:
+                    input#food-options(type="number", name="instructions")
+                    button#food-options-button(type="button") submit
+            button(type="submit") submit
+    script(src="/javascripts/forms/reciepie.js")
+include ../partials/footer.pug
+            
+

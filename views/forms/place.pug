@@ -1,0 +1,44 @@
+head
+    title veganopedia: #{name}
+    link(rel="stylesheet", href="/stylesheets/forms/place.css")
+include ../partials/header.pug
+body
+    .form-container
+        form(action="/forms/place" method="POST" onsubmit="return formSubmitHandler(event)")
+            h1 Add Restaurant
+            div
+                label(for="PlaceName") Name of restaurant :
+                input(type="text" placeholder="restaurant name" name="placeName" required)
+            div
+                label(for="road") locality/road :
+                input(type="text" placeholder="locality/road" name="road")
+            div
+                label(for="city") City :
+                input(type="text" placeholder="City" name="city")
+            div
+                label(for="state") State : 
+                input(type="text" placeholder="State" name="state")
+            div
+                label(for="pincode") Pincode :
+                input(type="text" placeholder="Pincode" name="pincode" required)
+            div
+                label(for="Rating") Rating :
+                select(name="rating" required)
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+            div
+                label(for="photo") paste photo url :
+                input(type="text" placeholder="Photo" name="photo")
+            #food-container
+                div
+                    label(for="foodOptions")  Number of Food items to add:
+                    input#food-options(type="number", name="foodOptions" min="1")
+                    button#food-options-button(type="button") Add Items
+            button(type="submit") submit
+    script(src="/javascripts/forms/place.js")
+include ../partials/footer.pug
+            
+

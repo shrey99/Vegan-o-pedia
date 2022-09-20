@@ -1,0 +1,74 @@
+$green1: #c4fb79;
+$green2: #91d451;
+$green3: #02b25f;
+$green4: #278577;
+$green5: #094754;
+$green6: #052e5c;
+
+.chat-container {
+  margin: auto;
+  width: 80%;
+  display: grid;
+  grid-template:
+    "a a a" auto
+    "b c c" 70vh / 1fr 1fr 1fr;
+  > * {
+    border: 1px solid #91d451;
+  }
+  h1 {
+    grid-area: a;
+    text-align: center;
+  }
+  .user-list {
+    grid-area: b;
+    .users {
+      text-align: center;
+      padding: 1em;
+      background-color: beige;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(243, 243, 147);
+      }
+    }
+  }
+  .chat-box {
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    .messages-container {
+      padding: 1em 0;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column-reverse;
+      span {
+        text-align: right;
+        padding: 0.3em;
+        margin: 0.2em 0.2em;
+        border: 1px solid $green5;
+        border-radius: 1em;
+      }
+    }
+    .input-bar {
+      align-items: center;
+      height: 3em;
+      border-top: 1px solid #91d451;
+      display: flex;
+      svg {
+        height: 50%;
+        cursor: pointer;
+        margin-left: 1em;
+        margin-right: 0.4em;
+        &:hover {
+          fill: $green4;
+        }
+      }
+      input {
+        flex-grow: 1;
+        margin-left: 0.4em;
+      }
+    }
+    #current-user {
+      border-bottom: 1px solid #91d451;
+    }
+  }
+}

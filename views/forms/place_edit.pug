@@ -1,0 +1,47 @@
+head
+    title veganopedia: #{name}
+    link(rel="stylesheet", href="/stylesheets/forms/place.css")
+include ../partials/header.pug
+body
+    .form-container
+        form(action=`/place/${placeDetails.placeName}/edit?_method=PUT` method="POST")
+            h1 Edit Restaurant
+            div
+                label(for="road") locality/road :
+                input(type="text" placeholder=`${placeDetails.road?placeDetails.road:"Road"}` name="road")
+            div
+                label(for="city") City :
+                input(type="text" placeholder=`${placeDetails.city?placeDetails.city:"City"}` name="city")
+            div
+                label(for="state") State : 
+                input(type="text" placeholder=`${placeDetails.state?placeDetails.state:"State"}` name="state")
+            div
+                label(for="pincode") Pincode :
+                input(type="text" placeholder=`${placeDetails.pincode}` name="pincode")
+            div
+                label(for="Rating") Rating :
+                select(name="rating")
+                    option(value="0") none 
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+            div
+                label(for="photo") past photo url :
+                input(type="text" placeholder=`${placeDetails.photos?placeDetails.photos:"Photo url"}` name="photo")
+            each val,index in itemDetails 
+                div.present-items
+                    label(for=`item${index}`) #{`item${index}`}
+                    input(type="text", name=`item${index}` placeholder=`${val.food_name}`)
+                    input(type="text", name=`item${index}` style="display:none;" value=`${val.food_name}`) 
+            #food-container
+                div
+                    label(for="foodOptions")  Number of Food items to add:
+                    input#food-options(type="number", name="foodOptions" min="1")
+                    button#food-options-button(type="button") Add Items
+            button(type="submit") submit
+    script(src="/javascripts/forms/edit_place.js")
+include ../partials/footer.pug
+            
+

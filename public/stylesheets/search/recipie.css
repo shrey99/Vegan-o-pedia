@@ -1,0 +1,164 @@
+body > form {
+  width: 80%;
+  margin: 1em auto;
+  padding: 1em;
+  border: 5px solid #9bc3c3;
+  background-color: #094754;
+  color: #9bc3c3;
+  border-radius: 1em;
+}
+
+body > form > * {
+  margin: 1em 0.2em;
+}
+
+body > form > p {
+  text-align: center;
+  font-size: 2em;
+}
+
+body > form > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+body > form > button {
+  font-size: 1.2em;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5em 1em;
+  background-color: #094754;
+  color: #9bc3c3;
+  border-color: #9bc3c3;
+}
+
+body > form > button:hover {
+  color: #91d451;
+  border-color: #91d451;
+}
+
+body > form > button:hover::after {
+  border-color: #91d451;
+}
+
+body > form > button:after {
+  border-color: #9bc3c3;
+}
+
+body > form > button:active {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.place-container,
+.reciepie-container {
+  border-radius: 1em;
+  width: 75%;
+  margin: 1em auto;
+  padding: 1em;
+  background-color: #91d451;
+  display: grid;
+  grid-template: "a b b b" auto "a b b b" auto "a c c c" auto/1.2fr 1fr 1fr 1fr;
+}
+@media screen and (max-width: 900px) {
+  .place-container,
+.reciepie-container {
+    grid-template: "a" auto "b" auto "c" auto/100%;
+  }
+  .place-container > *,
+.reciepie-container > * {
+    margin: 0.5em 0;
+  }
+}
+.place-container figure,
+.reciepie-container figure {
+  grid-area: a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 900px) {
+  .place-container figure,
+.reciepie-container figure {
+    align-self: center;
+    justify-self: center;
+  }
+}
+.place-container figure img,
+.reciepie-container figure img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+.place-container .info,
+.reciepie-container .info {
+  grid-area: b;
+  color: #094754;
+  font-size: 1.5em;
+}
+.place-container .actions,
+.reciepie-container .actions {
+  grid-area: c;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 900px) {
+  .place-container .actions,
+.reciepie-container .actions {
+    justify-content: center;
+    width: 100%;
+  }
+  .place-container .actions form,
+.reciepie-container .actions form {
+    margin: 0;
+  }
+}
+.place-container .actions > *,
+.reciepie-container .actions > * {
+  margin: 0 1em;
+}
+.place-container .actions button,
+.reciepie-container .actions button {
+  height: 30px;
+  font-size: 1.1em;
+  padding: 0.3em 0.6em;
+}
+@media screen and (max-width: 900px) {
+  .place-container .actions button,
+.reciepie-container .actions button {
+    width: fit-content;
+    margin: 0 1em;
+    font-size: 0.8em;
+    padding: 0.1em 0.5em;
+  }
+}
+.place-container .actions .view-more-button,
+.reciepie-container .actions .view-more-button {
+  background-color: #6794d6;
+  border: 1px solid #6794d6;
+}
+.place-container .actions .view-more-button::after,
+.reciepie-container .actions .view-more-button::after {
+  border: 2px solid #6794d6;
+}
+.place-container .actions .edit-button,
+.reciepie-container .actions .edit-button {
+  background-color: #d6cb67;
+  border: 1px solid #d6cb67;
+}
+.place-container .actions .edit-button::after,
+.reciepie-container .actions .edit-button::after {
+  border: 2px solid #d6cb67;
+}
+.place-container .actions .delete-button,
+.reciepie-container .actions .delete-button {
+  background-color: #cf7653;
+  border: 1px solid #cf7653;
+}
+.place-container .actions .delete-button::after,
+.reciepie-container .actions .delete-button::after {
+  border: 2px solid #cf7653;
+}
+
+/*# sourceMappingURL=recipie.css.map */

@@ -1,0 +1,149 @@
+#place-details {
+  border-radius: 2em;
+  border-color: #094754;
+  color: #094754;
+  width: 80%;
+  margin: auto;
+  margin-top: 6em;
+  padding: 1em;
+  border: 2px solid;
+}
+#place-details > * {
+  margin: 1em 2em;
+}
+#place-details h1,
+#place-details h4 {
+  text-align: center;
+  font-size: 1.7em;
+}
+#place-details .column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 950px) {
+  #place-details .column-grid {
+    grid-template-columns: 1fr;
+  }
+}
+#place-details .column-grid figure {
+  grid-column: 2;
+  grid-row: 1/1;
+}
+#place-details .column-grid figure img {
+  max-width: 100%;
+}
+@media screen and (max-width: 950px) {
+  #place-details .column-grid figure {
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: center;
+  }
+  #place-details .column-grid figure img {
+    margin: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+#place-details .column-grid #address-container {
+  font-size: 1.5em;
+  grid-column: 1;
+  grid-row: 1/1;
+}
+@media screen and (max-width: 950px) {
+  #place-details .column-grid #address-container {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #place-details .column-grid #address-container div span {
+    justify-self: center;
+  }
+}
+#place-details .column-grid #address-container div {
+  width: 80%;
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#food-item-list {
+  font-size: 1.5em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 950px) {
+  #food-item-list {
+    margin: 1em 0;
+  }
+}
+#food-item-list > * {
+  justify-self: center;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-container {
+  margin: 1em auto;
+  border: 3.5px solid #094754;
+  width: 70%;
+}
+.comment-container > * {
+  margin: 0.5em 0.4em;
+}
+.comment-container .edit-button {
+  background-color: #d6cb67;
+  border: 1px solid #d6cb67;
+}
+.comment-container .edit-button::after {
+  border: 1px solid #d6cb67;
+}
+
+.sub-comment-container {
+  border-top: 3px solid #094754;
+  display: flex;
+  justify-content: space-around;
+}
+.sub-comment-container p {
+  margin-right: 1em;
+}
+.sub-comment-container p:nth-of-type(1) {
+  flex-grow: 1;
+  margin-left: 1em;
+  margin-right: 0;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.comment-form {
+  width: 70%;
+  margin: 1em auto;
+  border: 3.5px solid #094754;
+  padding: 0.5em;
+}
+.comment-form div {
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+  margin: 1em 0;
+}
+.comment-form div .add-comment {
+  padding: 0.3em 1em;
+  background-color: #a6d667;
+  border: 1px solid #a6d667;
+}
+.comment-form div .add-comment::after {
+  border: 1px solid #a6d667;
+}
+
+#user-comment {
+  order: -1;
+}
+
+/*# sourceMappingURL=place.css.map */

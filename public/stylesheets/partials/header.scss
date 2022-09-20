@@ -1,0 +1,177 @@
+$green1: #c4fb79;
+$green2: #91d451;
+$green3: #02b25f;
+$green4: #278577;
+$green5: #094754;
+$green6: #052e5c;
+.navbar {
+  color: $green2;
+  z-index: 10;
+  height: 5vh;
+  background-color: $green5;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.2em;
+  //box-shadow: 0 10px 5px hsl(138, 24%, 41%);
+  h3 {
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    span {
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+  button {
+    font-size: 1em;
+    cursor: pointer;
+  }
+  .right-items {
+    display: flex;
+    align-items: center;
+    > * {
+      margin: 0 1em;
+    }
+
+    a {
+      margin: 0 0.5em;
+      transition: background-color 0.5s ease;
+      border-radius: 5px;
+      padding: 0.2em 0.6em;
+      color: $green2;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      span {
+        margin-left: 5px;
+      }
+      &:active {
+        background-color: black;
+      }
+      &:hover {
+        color: $green5;
+        background-color: aliceblue;
+      }
+      &:nth-of-type(1) {
+        margin-left: 5px;
+      }
+      @media screen and (max-width: 650px) {
+        &:nth-of-type(n + 2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+#login-button,
+#logout-button {
+  padding: 0.1em 0.4em;
+  margin-right: 1em;
+}
+#login-forms {
+  margin-right: 2em;
+  position: absolute;
+  top: 130%;
+  right: 0;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#login-form,
+#register-form {
+  color: white;
+  background-color: $green5;
+  display: inline-block;
+  padding: 1rem;
+  border: 5px solid $green6;
+  border-radius: 10px;
+  > div {
+    margin: 1em 0.5em;
+    button {
+      color: $green2;
+      background-color: $green5;
+      padding: 0 0.4em;
+      border: 1px solid $green2;
+      &::after {
+        border: 1px solid $green2;
+      }
+    }
+    label {
+      font-size: 1.1em;
+    }
+  }
+}
+
+#login-form {
+  margin-bottom: 1em;
+}
+
+#register-button {
+  color: $green1;
+  margin-left: 0.3em;
+}
+
+#broccoli-svg {
+  height: 28px;
+}
+
+.close-svg {
+  cursor: pointer;
+  height: 100%;
+  width: 17px;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease;
+}
+
+.errorMessages {
+  margin: auto;
+  width: 80%;
+  background-color: #c68787;
+  border: 2px solid rgb(211, 46, 46);
+  display: flex;
+  justify-content: center;
+  padding: 0.3em 0.5em;
+}
+
+.successMessages {
+  margin: auto;
+  width: 80%;
+  background-color: rgb(125, 207, 139);
+  border: 2px solid rgb(56, 212, 82);
+  display: flex;
+  justify-content: center;
+  padding: 0.3em 0.5em;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

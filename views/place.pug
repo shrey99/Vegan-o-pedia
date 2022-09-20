@@ -1,0 +1,82 @@
+
+head
+    link(rel="stylesheet", href="/stylesheets/place.css")
+include ./partials/header.pug
+body
+    #place-details
+        h1 #{dbPlaceResponse.placeName}
+        .column-grid
+            -let src = dbPlaceResponse.photos?dbPlaceResponse.photos:"/images/default.jpg";
+                figure
+                    img(src=src, alt="The image could not be loaded")
+            #address-container
+                if(dbPlaceResponse.road)
+                    div
+                        span Road/Locality
+                        span #{dbPlaceResponse.road}
+                if(dbPlaceResponse.city)
+                    div
+                        span City
+                        span #{dbPlaceResponse.city}
+                if(dbPlaceResponse.state)
+                    div
+                        span State
+                        span #{dbPlaceResponse.state}
+                if(dbPlaceResponse.pincode)
+                    div
+                        span Pincode
+                        span #{dbPlaceResponse.pincode}
+        h4 Vegan Foods Available at this place
+        ul#food-item-list
+            for val,index in dbFoodResponse
+                li=val.food_name
+    h3 comments
+    if(isAuth && !didUserComment)
+        .comment-form
+            form(action=`/place/${dbPlaceResponse.placeName}/comment`, method="post")
+                div
+                    label(for="comment") Enter your comment 
+                    textarea#comment(name="comment", cols="30", rows="5")
+                div
+                    span 
+                        label(for="rating") Your rating:
+                        select#rating(name="rating")
+                            option(value="1") 1
+                            option(value="2") 2
+                            option(value="3") 3
+                            option(value="4") 4
+                            option(value="5") 5
+                    button.addcomment(type="submit") Add comment
+    .comments-container 
+        each val,index in dbCommentResponse
+            if(val.username == name)
+                .comment-container#user-comment
+                    h5 username : #{val.username}
+                    .sub-comment-container
+                        p=val.commentPlace
+                        p rating : #{val.rating}
+                    button#edit-button.edit-button Edit
+            else  
+                .comment-container 
+                    h5 username : #{val.username}
+                    .sub-comment-container
+                        p=val.commentPlace
+                        p rating : #{val.rating}
+            if(val.username == name)    
+                div#edit-form.comment-form(style="display:none;")
+                    form(action=`/place/${dbPlaceResponse.placeName}/comment/?_method=PUT`, method="POST") 
+                        div
+                            label(for="comment") Enter your comment 
+                            textarea#comment(name="comment", cols="30", rows="5")
+                        div
+                            span 
+                                label(for="rating") Your rating: 
+                                select#rating(name="rating")
+                                    option(value="1") 1
+                                    option(value="2") 2
+                                    option(value="3") 3
+                                    option(value="4") 4
+                                    option(value="5") 5
+                            button.add-comment(type="submit") Edit comment
+    script(src="/javascripts/place.js") 
+include ./partials/footer.pug

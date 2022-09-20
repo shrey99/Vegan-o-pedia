@@ -1,0 +1,30 @@
+
+head
+    link(rel="stylesheet", href="stylesheets/home.css")
+include ./partials/header.pug
+body
+    if(error)
+        p.errorMessages=error
+    else if(success)
+        p.successMessages=success
+    figure
+        img(src="/images/homepage/title.jpg", alt="Title image")
+    .landing-container
+        .heading
+            h2 Why Go Vegan?
+        .info |  Preventing the exploitation of animals is not the only reason for becoming vegan, but for many it remains the key factor in their decision to go vegan and stay vegan. Having emotional attachments with animals may form part of that reason, while many believe that all sentient creatures have a right to life and freedom. Specifics aside, avoiding animal products is one of the most obvious ways you can take a stand against animal cruelty and animal exploitation everywhere. A more detailed overview on why being vegan demonstrates true compassion for animals can be found 
+            a(href="https://www.vegansociety.com/sites/default/files/CompassionForAnimalsedited.pdf")  here
+            | .
+        .info Well-planned vegan diets follow healthy eating guidelines, and contain all the nutrients that our bodies need. Both the British Dietetic Association and the American Academy of Nutrition and Dietetics recognise that they are suitable for every age and stage of life. Some research has linked vegan diets with lower blood pressure and cholesterol, and lower rates of heart disease, type 2 diabetes and some types of cancer.
+        .info From recycling our household rubbish to cycling to work, we're all aware of ways to live a greener life. One of the most effective things an individual can do to lower their carbon footprint is to avoid all animal products. This goes way beyond the problem of cow flatulence!
+        .info Just like veganism is the sustainable option when it comes to looking after our planet, plant-based living is also a more sustainable way of feeding the human family. A plant-based diet requires only one third of the land needed to support a meat and dairy diet. With rising global food and water insecurity due to a myriad of environmental and socio-economic problems, there's never been a better time to adopt a more sustainable way of living. Avoiding animal products is not just one of the simplest ways an individual can reduce the strain on food as well as other resources, it's the simplest way to take a stand against inefficient food systems which disproportionately affect the poorest people all over the world.
+    .landing-container
+        .heading 
+            h2 Why Veganopedia 
+        .info This website helps you locate restaurants that can serve vegan foods but do not necessarily call themselves vegan.Our database is created thanks to the contributions of its members.
+        .info You can search for places by using the navigation bar at the top. If you want to contribute to the website do consider logging in.
+include ./partials/footer.pug
+
+
+
+
